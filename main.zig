@@ -5,7 +5,7 @@ const bytecodeMappings = [_]u8{ '+', '-', '>', '<', '[', ']', '.', ',', '_', '\'
 pub fn main() !void {
     const args = std.os.argv;
     if (args.len < 2) {
-        std.debug.print("expected 'raidump <file>'", .{});
+        std.debug.print("expected 'raidump <file>'\n", .{});
         return;
     }
 
