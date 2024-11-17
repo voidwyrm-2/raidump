@@ -1,10 +1,12 @@
 #! /bin/sh
 
-zig build-exe --name raidump main.zig
-if [ -f "raidump.o" ]; then
-    rm -rf raidump.o
+NAME="raidump"
+
+zig build-exe --name "$NAME" main.zig
+if [ -f "$NAME.o" ]; then
+    rm -rf "$NAME.o"
 fi
 
-if [ "$1" = "-i" ] && [ "$2" != "" ] && [ -f "raidump" ]; then
-    mv ./raidump "$2/raidump"
+if [ "$1" = "-i" ] && [ "$2" != "" ] && [ -f "$NAME" ]; then
+    mv "./$NAME" "$2/$NAME"
 fi
